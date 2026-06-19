@@ -1,3 +1,16 @@
+import sys
+import os
+
+sys.path.append(
+    os.path.abspath(
+        os.path.join(
+            os.path.dirname(__file__),
+            "..",
+            "skey-main"
+        )
+    )
+)
+
 from fastapi.responses import FileResponse
 from fastapi import FastAPI, UploadFile, File, Form
 import tempfile
