@@ -5,3 +5,5 @@ librosa
 numpy
 soundfile
 scipy
+torch
+
