@@ -6,4 +6,4 @@ numpy
 soundfile
 scipy
 torch
-
+torchaudio
