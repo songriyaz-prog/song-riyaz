@@ -1,0 +1,9 @@
+essentia-env/
+song-riyaz-env/
+node_modules/
+.next/
+__pycache__/
+
+*.pyc
+*.wav
+*.mp3
