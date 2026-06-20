@@ -34,7 +34,7 @@ export default function Home() {
 
       try {
         const response = await fetch(
-          "http://127.0.0.1:8000/detect-bpm",
+          "https://song-riyaz.onrender.com/detect-bpm",
           {
             method: "POST",
             body: formData,
@@ -49,7 +49,7 @@ export default function Home() {
 keyFormData.append("file", file);
 
 const keyResponse = await fetch(
-  "http://127.0.0.1:8000/detect-key",
+  "https://song-riyaz.onrender.com/detect-key",
   {
     method: "POST",
     body: keyFormData,
@@ -79,7 +79,7 @@ setSongKey(keyData.key);
 
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/pitch-shift",
+      "https://song-riyaz.onrender.com/pitch-shift",
       {
         method: "POST",
         body: formData,
@@ -106,7 +106,7 @@ setSongKey(keyData.key);
     keyFormData.append("file", shiftedFile);
 
     const keyResponse = await fetch(
-      "http://127.0.0.1:8000/detect-key",
+      "https://song-riyaz.onrender.com/detect-key",
       {
         method: "POST",
         body: keyFormData,
