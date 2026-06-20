@@ -17,7 +17,7 @@ import tempfile
 import librosa
 import numpy as np
 import soundfile as sf
-from skey import detect_key as skey_detect_key
+# from skey import detect_key as skey_detect_key
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
