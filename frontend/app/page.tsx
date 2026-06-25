@@ -139,11 +139,19 @@ setSongKey(keyData.key);
     </p>
 
     <input
+      id="song-upload"
       type="file"
       accept="audio/*"
+      className="hidden"
       onChange={handleFileUpload}
-      className="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold cursor-pointer transition"
     />
+
+    <label
+      htmlFor="song-upload"
+      className="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold cursor-pointer"
+    >
+      Upload Song
+    </label>
 
     {songName && (
       <div className="mt-10 w-full max-w-3xl bg-zinc-900 rounded-2xl p-6">
