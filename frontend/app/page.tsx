@@ -138,15 +138,12 @@ setSongKey(keyData.key);
       shift pitch, and improve your singing.
     </p>
 
-    <label className="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold cursor-pointer transition">
-      Upload Song
-      <input
-        type="file"
-        accept="audio/*"
-        className="hidden"
-        onChange={handleFileUpload}
-      />
-    </label>
+    <input
+      type="file"
+      accept="audio/*"
+      onChange={handleFileUpload}
+      className="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold cursor-pointer transition"
+    />
 
     {songName && (
       <div className="mt-10 w-full max-w-3xl bg-zinc-900 rounded-2xl p-6">
