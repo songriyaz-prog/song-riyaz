@@ -141,7 +141,7 @@ setSongKey(keyData.key);
     <input
       id="song-upload"
       type="file"
-      accept="audio/*"
+      accept="*/*"
       className="hidden"
       onChange={handleFileUpload}
     />
