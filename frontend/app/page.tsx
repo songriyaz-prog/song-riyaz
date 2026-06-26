@@ -141,8 +141,9 @@ setSongKey(keyData.key);
     <input
       id="song-upload"
       type="file"
-      accept="*/*"
-      className="hidden"
+      multiple
+      accept="audio/*,.mp3,.wav,.flac,.m4a,.mp4,.mov,.wma,video/*"
+      style={{ display: "none" }}
       onChange={handleFileUpload}
     />
 
