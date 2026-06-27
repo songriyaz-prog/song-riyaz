@@ -197,7 +197,7 @@ setSongKey(keyData.key);
             <p className="text-gray-400 text-sm">
               BPM
             </p>
-            <p className="text-5xl font-extrabold text-green-500">
+            <p className="text-3xl md:text-5xl font-extrabold text-green-500">
               {bpm ?? "--"}
             </p>
           </div>
@@ -206,7 +206,7 @@ setSongKey(keyData.key);
             <p className="text-gray-400 text-sm">
               KEY
             </p>
-            <p className="text-5xl font-extrabold text-green-500">
+            <p className="text-3xl md:text-5xl font-extrabold text-green-500">
               {detectingKey ? "Detecting..." : songKey || "--"}
             </p>
           </div>
