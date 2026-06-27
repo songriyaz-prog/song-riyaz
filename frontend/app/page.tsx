@@ -1,245 +1,103 @@
-"use client";
+// Song Riyaz Homepage Starter
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-import { useState } from "react";
-
-export default function Home() {
-  const [songName, setSongName] = useState("");
-  const [audioURL, setAudioURL] = useState("");
-  const [bpm, setBpm] = useState<number | null>(null);
-  const [songKey, setSongKey] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [detectingKey, setDetectingKey] = useState(false);
-
-  const [pitch, setPitch] = useState(0);
-  const [currentFile, setCurrentFile] = useState<File | null>(null);
-  const [processingPitch, setProcessingPitch] = useState(false);
-
-  const handleFileUpload = async (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const file = event.target.files?.[0];
-
-    setCurrentFile(file || null);
-
-    if (file) {
-      setSongName(file.name);
-
-      const url = URL.createObjectURL(file);
-      setAudioURL(url);
-
-      const formData = new FormData();
-      formData.append("file", file);
-
-      setLoading(true);
-
-      try {
-        const response = await fetch(
-          "https://song-riyaz.onrender.com/detect-bpm",
-          {
-            method: "POST",
-            body: formData,
-          }
-        );
-
-        const data = await response.json();
-
-        setBpm(data.bpm);
-
-        const keyFormData = new FormData();
-keyFormData.append("file", file);
-
-const keyResponse = await fetch(
-  "https://song-riyaz.onrender.com/detect-key",
-  {
-    method: "POST",
-    body: keyFormData,
-  }
-);
-
-const keyData = await keyResponse.json();
-
-setSongKey(keyData.key);
-
-      } catch (error) {
-        console.error(error);
-      }
-
-      setLoading(false);
-    }
-  };
-
-  const changePitch = async (semitones: number) => {
-  if (!currentFile) return;
-
-  setProcessingPitch(true);
-
-  const formData = new FormData();
-  formData.append("file", currentFile);
-  formData.append("semitones", semitones.toString());
-
-  try {
-    const response = await fetch(
-      "https://song-riyaz.onrender.com/pitch-shift",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
-
-    const blob = await response.blob();
-
-    const shiftedUrl = URL.createObjectURL(blob);
-
-    setAudioURL(shiftedUrl);
-
-    setDetectingKey(true);
-
-    setPitch(semitones);
-
-    const shiftedFile = new File(
-      [blob],
-      "shifted.wav",
-      { type: "audio/wav" }
-    );
-
-    const keyFormData = new FormData();
-    keyFormData.append("file", shiftedFile);
-
-    const keyResponse = await fetch(
-      "https://song-riyaz.onrender.com/detect-key",
-      {
-        method: "POST",
-        body: keyFormData,
-      }
-    );
-
-    const keyData = await keyResponse.json();
-
-    setSongKey(keyData.key);
-
-    setDetectingKey(false);
-
-  } catch (error) {
-    console.error(error);
-  }
-
-  setProcessingPitch(false);
-};
-
+  export default function Home() {
   return (
-  <main className="min-h-screen bg-black text-white flex flex-col items-center px-6 py-12">
+    <main className="min-h-screen bg-black text-white">
+      <Navbar />
+      
+      <section
+        className="relative h-[720px] bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/hero-banner.png')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
 
-    <h1 className="text-5xl font-bold mb-4">
-      Song Riyaz
-    </h1>
+        <div className="relative max-w-7xl mx-auto h-full flex items-center px-6">
 
-    <p className="text-gray-400 text-center max-w-2xl mb-10">
-      Practice any song in your own scale. Detect BPM, detect key,
-      shift pitch, and improve your singing.
-    </p>
+          <div className="max-w-xl">
 
-    <input
-      id="song-upload"
-      type="file"
-      multiple
-      accept="audio/*,.mp3,.wav,.flac,.m4a,.mp4,.mov,.wma,video/*"
-      style={{ display: "none" }}
-      onChange={handleFileUpload}
-    />
-
-    <label
-      htmlFor="song-upload"
-      className="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold cursor-pointer"
-    >
-      Upload Song
-    </label>
-
-    {songName && (
-      <div className="mt-10 w-full max-w-3xl bg-zinc-900 rounded-2xl p-6">
-
-        <h2 className="text-xl font-bold mb-4">
-          Song Information
-        </h2>
-
-        <p className="text-gray-300 break-all">
-          {songName}
-        </p>
-
-        <div className="grid grid-cols-2 gap-4 mt-6">
-
-          <div className="bg-zinc-800 rounded-xl p-4 text-center">
-            <p className="text-gray-400 text-sm">
-              BPM
+            <p className="text-green-400 font-semibold mb-5">
+              AI POWERED • ACCURATE • FAST
             </p>
-            <p className="text-3xl font-bold text-green-400">
-              {bpm ?? "--"}
-            </p>
-          </div>
 
-          <div className="bg-zinc-800 rounded-xl p-4 text-center">
-            <p className="text-gray-400 text-sm">
-              KEY
+            <h1 className="text-6xl font-extrabold leading-tight">
+              Practice Any Song
+              <br />
+              <span className="text-green-500">
+                In Your Own Scale
+              </span>
+            </h1>
+
+            <p className="text-xl text-gray-300 mt-8 leading-9">
+              Practice any song in your own scale.
+              Detect BPM, detect key, shift pitch,
+              and improve your singing.
             </p>
-            <p className="text-3xl font-bold text-yellow-400">
-              {detectingKey ? "Detecting..." : songKey || "--"}
+
+            <Link
+              href="/analyze"
+              className="inline-block mt-10 bg-green-500 hover:bg-green-600 px-10 py-5 rounded-2xl text-lg font-bold transition"
+            >
+              Upload Song
+            </Link>
+
+            <p className="mt-5 text-gray-400 text-sm">
+              ✓ No signup required • ✓ Free to use
             </p>
+
           </div>
 
         </div>
+      </section>
 
-        <div className="mt-6 flex items-center justify-center gap-4">
+      <section id="features" className="max-w-7xl mx-auto px-6 py-20">
+        <h3 className="text-4xl font-bold text-center mb-12">Features</h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {["Key Detection","BPM Detection","Pitch Shift","Practice Mode"].map((t)=>(
+            <div
+              key={t}
+              className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-green-500 transition duration-300"
+            >
+              <div className="text-5xl mb-4">
+                {t === "Key Detection" && "🎵"}
+                {t === "BPM Detection" && "🥁"}
+                {t === "Pitch Shift" && "🎚️"}
+                {t === "Practice Mode" && "🎤"}
+              </div>
 
-<button
-  onClick={() => changePitch(pitch - 1)}
-  disabled={processingPitch}
-  className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg font-bold"
->
-  {processingPitch ? (
-  <span className="animate-spin inline-block">⟳</span>
-  ) : (
-  "-"
-  )}
-</button>
+              <h4 className="text-2xl font-bold mb-3">
+                {t}
+              </h4>
 
-<div className="text-xl font-bold text-white">
-  Pitch: {pitch}
-</div>
+              <p className="text-gray-400">
+                {t === "Key Detection" && "Find the original key of any song."}
+                {t === "BPM Detection" && "Detect the tempo in seconds."}
+                {t === "Pitch Shift" && "Change the song into your vocal range."}
+                {t === "Practice Mode" && "Practice smarter with built-in tools."}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-<button
-  onClick={() => changePitch(pitch + 1)}
-  disabled={processingPitch}
-  className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-bold"
->
-  {processingPitch ? (
-  <span className="animate-spin inline-block">⟳</span>
-  ) : (
-  "+"
-  )}
-</button>
+      <section id="works" className="bg-zinc-950 py-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h3 className="text-4xl font-bold mb-12">How It Works</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {["Upload Song","Analyze","Practice"].map((s)=>(
+              <div key={s} className="bg-black border border-zinc-800 rounded-3xl p-8">{s}</div>
+            ))}
+          </div>
 
-</div>
+        </div>
+      </section>
 
-        {audioURL && (
-          <audio
-            controls
-            className="w-full mt-6"
-            src={audioURL}
-          />
-        )}
+      <Footer />
 
-      </div>
-    )}
-
-    {loading && (
-      <p className="mt-6 text-yellow-400">
-        Analyzing Song...
-      </p>
-    )}
-
-    <p className="mt-12 text-sm text-gray-500">
-      Created by Haroon
-    </p>
-
-  </main>
-);
+    </main>
+  );
 }
