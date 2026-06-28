@@ -70,7 +70,7 @@ import Footer from "@/components/Footer";
               alt="Song Riyaz"
               className="w-full h-auto"
             />
-          <div className="absolute bottom-10 left-0 w-full px-6">
+          <div className="absolute bottom-0 left-0 w-full px-6 pb-8">
 
           {/* Hero Text */}
           <div className="px-6">
