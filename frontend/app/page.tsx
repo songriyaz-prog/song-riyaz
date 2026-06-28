@@ -7,9 +7,11 @@ import Footer from "@/components/Footer";
   return (
     <main className="min-h-screen bg-black text-white">
       <Navbar />
+
+      <div className="hidden md:block">
       
       <section
-        className="relative h-[720px] bg-cover bg-[70%_center] md:bg-center"
+        className="relative h-[720px] bg-cover bg-center"
         style={{
           backgroundImage: "url('/hero-banner.png')",
         }}
@@ -54,7 +56,14 @@ import Footer from "@/components/Footer";
         </div>
       </section>
 
-      <section id="features" className="max-w-7xl mx-auto px-6 py-20">
+      </div>
+
+      <div className="md:hidden">
+        Mobile Hero Here
+      </div>
+
+      <section className="bg-zinc-900 py-20">
+        <section id="features" className="max-w-7xl mx-auto px-6 py-20">
         <h3 className="text-4xl font-bold text-center mb-12">Features</h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {["Key Detection","BPM Detection","Pitch Shift","Practice Mode"].map((t)=>(
@@ -97,6 +106,7 @@ import Footer from "@/components/Footer";
       </section>
 
       <Footer />
+    </section>
 
     </main>
   );
