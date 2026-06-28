@@ -10,57 +10,91 @@ import Footer from "@/components/Footer";
 
       <div className="hidden md:block">
       
-      <section
-        className="relative h-[720px] bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/hero-banner.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+        <section
+          className="relative h-[720px] bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/hero-banner.png')",
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
 
-        <div className="relative max-w-7xl mx-auto h-full flex items-center px-6">
+          <div className="relative max-w-7xl mx-auto h-full flex items-center px-6">
 
-          <div className="max-w-xl">
+            <div className="max-w-xl">
 
-            <p className="text-green-400 font-semibold mb-5">
-              AI POWERED • ACCURATE • FAST
-            </p>
+              <p className="text-green-400 font-semibold mb-5">
+                AI POWERED • ACCURATE • FAST
+              </p>
 
-            <h1 className="text-6xl font-extrabold leading-tight">
-              Practice Any Song
-              <br />
-              <span className="text-green-500">
-                In Your Own Scale
-              </span>
-            </h1>
+              <h1 className="text-6xl font-extrabold leading-tight">
+                Practice Any Song
+                <br />
+                <span className="text-green-500">
+                  In Your Own Scale
+                </span>
+              </h1>
 
-            <p className="text-xl text-gray-300 mt-8 leading-9">
-              Practice any song in your own scale.
-              Detect BPM, detect key, shift pitch,
-              and improve your singing.
-            </p>
+              <p className="text-xl text-gray-300 mt-8 leading-9">
+                Practice any song in your own scale.
+                Detect BPM, detect key, shift pitch,
+                and improve your singing.
+              </p>
 
-            <Link
-              href="/analyze"
-              className="inline-block mt-10 bg-green-500 hover:bg-green-600 px-10 py-5 rounded-2xl text-lg font-bold transition"
-            >
-              Upload Song
-            </Link>
+              <Link
+                href="/analyze"
+                className="inline-block mt-10 bg-green-500 hover:bg-green-600 px-10 py-5 rounded-2xl text-lg font-bold transition"
+              >
+                Upload Song
+              </Link>
 
-            <p className="mt-5 text-gray-400 text-sm">
-              ✓ No signup required • ✓ Free to use
-            </p>
+              <p className="mt-5 text-gray-400 text-sm">
+                ✓ No signup required • ✓ Free to use
+              </p>
+
+            </div>
 
           </div>
-
-        </div>
-      </section>
+        </section>
 
       </div>
 
       <div className="md:hidden">
-        Mobile Hero Here
-      </div>
+      <section
+        className="relative h-[760px] bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/hero-banner.png')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/45"></div>
+
+        <div className="relative h-full flex flex-col justify-center px-6">
+          <p className="text-green-400 font-semibold text-lg">
+            AI POWERED • ACCURATE • FAST
+          </p>
+
+          <h1 className="text-5xl font-extrabold leading-tight mt-4">
+            Practice Any Song
+            <br />
+            <span className="text-green-500">
+              In Your Own Scale
+            </span>
+          </h1>
+
+          <p className="text-gray-300 text-lg mt-6 leading-8 max-w-sm">
+            Practice any song in your own scale.
+            Detect BPM, detect key, shift pitch,
+            and improve your singing.
+          </p>
+
+          <Link
+            href="/analyze"
+            className="inline-block mt-8 bg-green-500 hover:bg-green-600 px-8 py-4 rounded-2xl font-bold text-center w-fit"
+          >
+            Upload Song
+          </Link>
+        </div>
+      </section>
+    </div>
 
       <section className="bg-zinc-900 py-20">
         <section id="features" className="max-w-7xl mx-auto px-6 py-20">
