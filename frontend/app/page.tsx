@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
       <Navbar />
       
       <section
-        className="relative h-[720px] bg-cover bg-center"
+        className="relative h-[720px] bg-cover bg-[70%_center] md:bg-center"
         style={{
           backgroundImage: "url('/hero-banner.png')",
         }}
