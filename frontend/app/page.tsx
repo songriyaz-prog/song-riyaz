@@ -65,7 +65,7 @@ import Footer from "@/components/Footer";
           {/* Hero Image */}
           <div className="w-full">
             <img
-              src="/hero-banner.png"
+              src="/hero-mobile.png"
               alt="Song Riyaz"
               className="w-full h-auto"
             />
