@@ -63,16 +63,17 @@ import Footer from "@/components/Footer";
         <section className="bg-black text-white">
 
           {/* Hero Image */}
-          <div className="w-full">
+          <section className="relative">
+
             <img
               src="/hero-mobile.png"
               alt="Song Riyaz"
               className="w-full h-auto"
             />
-          </div>
+          <div className="absolute bottom-10 left-0 w-full px-6">
 
           {/* Hero Text */}
-          <div className="px-6 py-8">
+          <div className="px-6">
 
             <p className="text-green-400 font-semibold tracking-wide text-sm">
               AI POWERED • ACCURATE • FAST
@@ -104,10 +105,13 @@ import Footer from "@/components/Footer";
               ✓ No signup required • ✓ Free to use
             </p>
 
+           </div>
+
           </div>
 
-        </section> 
-    </div>
+        </section>
+        </section>
+      </div>
 
       <section className="bg-zinc-900 py-20">
         <section id="features" className="max-w-7xl mx-auto px-6 py-20">
