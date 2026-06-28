@@ -59,49 +59,54 @@ import Footer from "@/components/Footer";
       </div>
 
       <div className="md:hidden">
-      <section
-        className="relative h-[760px] overflow-hidden"
-        style={{
-          backgroundImage: "url('/hero-banner.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "65% center",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/45"></div>
+      
+        <section className="bg-black text-white">
 
-        <div className="relative z-10 h-full flex flex-col justify-center px-6">
+          {/* Hero Image */}
+          <div className="w-full">
+            <img
+              src="/hero-banner.png"
+              alt="Song Riyaz"
+              className="w-full h-auto"
+            />
+          </div>
 
-          <p className="text-green-400 font-semibold text-lg">
-            AI POWERED • ACCURATE • FAST
-          </p>
+          {/* Hero Text */}
+          <div className="px-6 py-8">
 
-          <h1 className="text-5xl font-extrabold leading-tight mt-6 max-w-[240px]">
-            Practice Any Song
-            <br />
-            <span className="text-green-500">
-              In Your Own Scale
-            </span>
-          </h1>
+            <p className="text-green-400 font-semibold tracking-wide text-sm">
+              AI POWERED • ACCURATE • FAST
+            </p>
 
-          <p className="text-gray-300 text-lg mt-6 leading-8 max-w-[280px]">
-            Practice any song in your own scale.
-            Detect BPM, detect key, shift pitch,
-            and improve your singing.
-          </p>
+            <h1 className="text-5xl font-extrabold leading-tight mt-5">
+              Practice Any Song
+              <br />
+              <span className="text-green-500">
+                In Your Own Scale
+              </span>
+            </h1>
 
-          <Link
-            href="/analyze"
-            className="inline-block mt-8 bg-green-500 hover:bg-green-600 px-8 py-4 rounded-2xl font-bold text-center w-fit"
-          >
-            Upload Song
-          </Link>
+            <p className="text-gray-300 text-lg leading-8 mt-6">
+              Practice any song in your own scale.
+              Detect BPM, detect key,
+              shift pitch, and improve
+              your singing.
+            </p>
 
-          <p className="mt-6 text-gray-400 text-sm">
-            ✓ No signup required • ✓ Free to use
-          </p>
+            <Link
+              href="/analyze"
+              className="inline-block mt-8 bg-green-500 hover:bg-green-600 px-8 py-4 rounded-2xl text-lg font-bold transition"
+            >
+              Upload Song
+            </Link>
 
-        </div>
-      </section>
+            <p className="mt-6 text-gray-400 text-sm">
+              ✓ No signup required • ✓ Free to use
+            </p>
+
+          </div>
+
+        </section> 
     </div>
 
       <section className="bg-zinc-900 py-20">
