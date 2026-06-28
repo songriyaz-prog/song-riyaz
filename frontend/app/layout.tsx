@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://songriyaz.xyz"),
+  metadataBase: new URL("https://www.songriyaz.xyz"),
 
   title: "Song Riyaz - Find Song Key, BPM & Change Pitch Online",
 
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Song Riyaz - Find Song Key, BPM & Change Pitch Online",
     description:
       "Detect song key, BPM, change pitch and practice songs in your own vocal scale.",
-    url: "https://songriyaz.xyz",
+    url: "https://www.songriyaz.xyz",
     siteName: "Song Riyaz",
     locale: "en_US",
     type: "website",
