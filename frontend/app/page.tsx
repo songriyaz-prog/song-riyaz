@@ -60,19 +60,22 @@ import Footer from "@/components/Footer";
 
       <div className="md:hidden">
       <section
-        className="relative h-[760px] bg-cover bg-center"
+        className="relative h-[760px] overflow-hidden"
         style={{
           backgroundImage: "url('/hero-banner.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "65% center",
         }}
       >
         <div className="absolute inset-0 bg-black/45"></div>
 
-        <div className="relative h-full flex flex-col justify-center px-6">
+        <div className="relative z-10 h-full flex flex-col justify-center px-6">
+
           <p className="text-green-400 font-semibold text-lg">
             AI POWERED • ACCURATE • FAST
           </p>
 
-          <h1 className="text-5xl font-extrabold leading-tight mt-4">
+          <h1 className="text-5xl font-extrabold leading-tight mt-6 max-w-[240px]">
             Practice Any Song
             <br />
             <span className="text-green-500">
@@ -80,7 +83,7 @@ import Footer from "@/components/Footer";
             </span>
           </h1>
 
-          <p className="text-gray-300 text-lg mt-6 leading-8 max-w-sm">
+          <p className="text-gray-300 text-lg mt-6 leading-8 max-w-[280px]">
             Practice any song in your own scale.
             Detect BPM, detect key, shift pitch,
             and improve your singing.
@@ -92,6 +95,11 @@ import Footer from "@/components/Footer";
           >
             Upload Song
           </Link>
+
+          <p className="mt-6 text-gray-400 text-sm">
+            ✓ No signup required • ✓ Free to use
+          </p>
+
         </div>
       </section>
     </div>
