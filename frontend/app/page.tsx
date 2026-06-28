@@ -70,16 +70,16 @@ import Footer from "@/components/Footer";
               alt="Song Riyaz"
               className="w-full h-auto"
             />
-          <div className="absolute bottom-0 left-0 w-full px-6 pb-8">
+          <div className="absolute top-[60%] left-0 w-full px-6">
 
           {/* Hero Text */}
           <div className="px-6">
 
-            <p className="text-green-400 font-semibold tracking-wide text-sm">
+            <p className="hidden">
               AI POWERED • ACCURATE • FAST
             </p>
 
-            <h1 className="text-5xl font-extrabold leading-tight mt-5">
+            <h1 className="text-4xl font-extrabold leading-tight mt-32">
               Practice Any Song
               <br />
               <span className="text-green-500">
@@ -87,7 +87,7 @@ import Footer from "@/components/Footer";
               </span>
             </h1>
 
-            <p className="text-gray-300 text-lg leading-8 mt-6">
+            <p className="text-gray-300 text-base leading-7 mt-4">
               Practice any song in your own scale.
               Detect BPM, detect key,
               shift pitch, and improve
