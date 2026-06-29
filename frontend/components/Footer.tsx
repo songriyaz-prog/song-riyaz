@@ -28,6 +28,7 @@ export default function Footer() {
 
               <a href="/">Home</a>
               <a href="/analyze">Analyze</a>
+              <a href="/blog">Blog</a>
               <a href="/contact">Contact</a>
               <a href="/privacy-policy">Privacy Policy</a>
               <a href="/terms">Terms & Conditions</a>
