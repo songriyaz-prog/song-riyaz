@@ -94,12 +94,23 @@ import Footer from "@/components/Footer";
               your singing.
             </p>
 
-            <Link
-              href="/analyze"
-              className="inline-block mt-8 bg-green-500 hover:bg-green-600 px-8 py-4 rounded-2xl text-lg font-bold transition"
-            >
-              Upload Song
-            </Link>
+            <div className="mt-8 flex flex-wrap gap-4">
+
+              <Link
+                href="/analyze"
+                className="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-2xl text-lg font-bold transition"
+              >
+                Upload Song
+              </Link>
+
+              <Link
+                href="/blog"
+                className="border border-green-500 text-green-500 hover:bg-green-500 hover:text-black px-8 py-4 rounded-2xl text-lg font-bold transition"
+              >
+                Read Our Blog
+              </Link>
+
+            </div>
 
             <p className="mt-6 text-gray-400 text-sm">
               ✓ No signup required • ✓ Free to use
