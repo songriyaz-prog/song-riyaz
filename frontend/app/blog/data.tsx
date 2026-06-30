@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import HowToFindTheKeyArticle from "./articles/how-to-find-the-key";
+import HowToDetectBPMArticle from "./articles/how-to-detect-bpm";
 
 export type BlogPost = {
   slug: string;
@@ -37,11 +38,7 @@ export const blogPosts: BlogPost[] = [
     modifiedISO: "2026-06-30",
     published: "June 2026",
     readingTime: "6 min read",
-    component: (
-      <p className="text-zinc-300">
-        This article is coming soon.
-      </p>
-    ),
+    component: <HowToDetectBPMArticle />,
   },
 
   {
