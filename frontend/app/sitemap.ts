@@ -15,6 +15,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://www.songriyaz.xyz/blog",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://www.songriyaz.xyz/blog/how-to-find-the-key-of-any-song",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.songriyaz.xyz/contact",
       lastModified: new Date(),
       changeFrequency: "monthly",
