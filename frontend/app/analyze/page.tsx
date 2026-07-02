@@ -257,9 +257,19 @@ setSongKey(keyData.key);
     )}
 
     {loading && (
-      <p className="mt-6 text-center text-yellow-400 text-lg font-medium animate-pulse">
-        Analyzing Song...
-      </p>
+      <div className="mt-6 rounded-2xl border border-green-500/30 bg-zinc-900 p-6 text-center animate-pulse">
+        <h3 className="text-lg font-semibold text-white">
+          🎵 Your song is being analyzed. Please wait.
+        </h3>
+
+        <p className="mt-3 text-zinc-300">
+          It can take{" "}
+          <span className="font-semibold text-green-400">
+            30 seconds to 2 minutes
+          </span>
+          , depending on the song, to give you accurate results.
+        </p>
+      </div>
     )}
 
   </div>
